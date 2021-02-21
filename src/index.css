@@ -1,0 +1,30 @@
+body {
+  background-color: #9090ec;
+  background-image: radial-gradient(#232995 1.6px, transparent 1.6px),
+    radial-gradient(#232995 1.6px, #9090ec 1.6px);
+  background-size: 64px 64px;
+  background-position: 0 0, 32px 32px;
+}
+
+.titulo {
+  height: 100px;
+  width: 600px;
+  background-color: white;
+  font-size: 30px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  transition: 1.5s;
+  opacity: 0.9;
+}
+
+.zoom {
+  transition: width 1s, height 1s, transform 1s;
+}
+.zoom:hover {
+  transform: scale(1.5);
+}
+
+.titulo:hover {
+  opacity: 0.8;
+  font-size: 35px;
+}
