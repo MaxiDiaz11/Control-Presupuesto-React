@@ -5,12 +5,18 @@ body {
   background-size: 64px 64px;
   background-position: 0 0, 32px 32px;
 }
+.contenedor {
+  background-color: white;
+  border-radius: 20px;
+  height: 190px;
+  width: 900px;
+}
 
 .titulo {
   height: 100px;
   width: 600px;
   background-color: white;
-  font-size: 30px;
+  font-size: 35px;
   border-radius: 20px;
   text-transform: uppercase;
   transition: 1.5s;
@@ -26,5 +32,5 @@ body {
 
 .titulo:hover {
   opacity: 0.8;
-  font-size: 35px;
+  font-size: 37px;
 }
