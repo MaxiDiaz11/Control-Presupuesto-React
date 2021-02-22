@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
+import Error from './Error'
 
 const Presupuesto = () => {
 
@@ -18,23 +19,26 @@ const Presupuesto = () => {
         setError(false);
     }
     return (
-        <div className="container contenedor p-4 text-center">
-            {error ? console.log("error") : null}
-            <h4>Definir Presupuesto</h4>
-            <form className="my-3" onSubmit={agregarPresupuesto}>
-                <div className="mb-3">
-                    <input
-                        type="number"
-                        className="form-control w-100"
-                        placeholder="Coloca tu presupuesto"
-                        onChange={definirPresupuesto}
-                    />
-                </div>
-                <div>
-                    <input type="submit" value="Enviar presupuesto" className="btn btn-primary w-100" />
-                </div>
-            </form>
-        </div>
+        <Fragment>
+            {error ? <Error mensaje="El presupuesto definido es invalido." /> : null}
+
+            <div className="container contenedor p-4 text-center">
+                <h4>Definir Presupuesto</h4>
+                <form className="my-3" onSubmit={agregarPresupuesto}>
+                    <div className="mb-3">
+                        <input
+                            type="number"
+                            className="form-control w-100"
+                            placeholder="Coloca tu presupuesto"
+                            onChange={definirPresupuesto}
+                        />
+                    </div>
+                    <div>
+                        <input type="submit" value="Enviar presupuesto" className="btn btn-primary w-100" />
+                    </div>
+                </form>
+            </div>
+        </Fragment>
     );
 }
 

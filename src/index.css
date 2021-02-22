@@ -5,6 +5,18 @@ body {
   background-size: 64px 64px;
   background-position: 0 0, 32px 32px;
 }
+
+.mensajeError {
+  font-size: 25px;
+}
+
+.error {
+  background-color: white;
+  border-radius: 20px;
+  height: 51px;
+  width: 900px;
+}
+
 .contenedor {
   background-color: white;
   border-radius: 20px;
