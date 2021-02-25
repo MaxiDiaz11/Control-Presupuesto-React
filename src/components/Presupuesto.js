@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import Error from './Error'
 
-const Presupuesto = () => {
+const Presupuesto = ({mostrarPresupuesto}) => {
 
     const [presupuesto, setPresupuesto] = useState(0);
     const [error, setError] = useState(false);
@@ -17,12 +17,12 @@ const Presupuesto = () => {
             return;
         }
         setError(false);
+        mostrarPresupuesto(false);
     }
     return (
         <Fragment>
             {error ? <Error mensaje="El presupuesto definido es invalido." /> : null}
-
-            <div className="container contenedor p-4 text-center">
+            <div className="container contenedor p-4 my-3 text-center w-75">
                 <h4>Definir Presupuesto</h4>
                 <form className="my-3" onSubmit={agregarPresupuesto}>
                     <div className="mb-3">
