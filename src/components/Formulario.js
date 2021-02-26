@@ -34,9 +34,9 @@ const Formulario = ({ setGasto, guardarCrearGasto }) => {
 
     return (
         <Fragment className="container">
+            <h2 className="text-center my-2">Agrega tus gastos aqui</h2>
             <form onSubmit={definirGasto}>
                 <div className="container mb-3">
-                    <h2 className="text-center">Agrega tus gastos aqui</h2>
                     {error ? <Error mensaje="Los datos ingresados son incorrectos." /> : null}
                     <label className="lead mb-1">Nombre del gasto</label>
                     <input
