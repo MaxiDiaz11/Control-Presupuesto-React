@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import Error from './Error'
 
-const Presupuesto = ({mostrarPresupuesto}) => {
+const Presupuesto = ({ actualizarMostarPresupuesto, asignarPresupuesto, setRestante }) => {
 
     const [presupuesto, setPresupuesto] = useState(0);
     const [error, setError] = useState(false);
@@ -17,7 +17,9 @@ const Presupuesto = ({mostrarPresupuesto}) => {
             return;
         }
         setError(false);
-        mostrarPresupuesto(false);
+        setRestante(presupuesto);
+        asignarPresupuesto(presupuesto);
+        actualizarMostarPresupuesto(false);
     }
     return (
         <Fragment>
@@ -34,7 +36,7 @@ const Presupuesto = ({mostrarPresupuesto}) => {
                         />
                     </div>
                     <div>
-                        <input type="submit" value="Enviar presupuesto" className="btn btn-primary w-100" />
+                        <input type="submit" value="Enviar presupuesto" className="btn btn-dark w-100" />
                     </div>
                 </form>
             </div>

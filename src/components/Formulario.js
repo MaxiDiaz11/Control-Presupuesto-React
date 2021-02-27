@@ -57,7 +57,7 @@ const Formulario = ({ setGasto, guardarCrearGasto }) => {
                         />
                     </div>
                     <div>
-                        <input type="submit" value="Definir gasto" className="btn btn-primary w-100" />
+                        <input type="submit" value="Definir gasto" className="btn btn-dark w-100" />
                     </div>
                 </div>
             </form>

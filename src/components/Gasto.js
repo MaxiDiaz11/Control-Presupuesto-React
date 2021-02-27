@@ -6,7 +6,7 @@ const Gasto = ({ gasto }) => {
             <span className="col d-flex align-items-center nombreGasto">
                 {(gasto.nombre).toUpperCase()}
             </span>
-            <span className="col d-flex justify-content-center mb-2 monto text-white  bg-primary">${gasto.cantidad}</span>
+            <span className="col d-flex justify-content-center mb-2 monto text-white  bg-dark">${gasto.cantidad}</span>
             <hr></hr>
         </div>
 

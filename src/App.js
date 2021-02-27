@@ -1,17 +1,19 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Presupuesto from '../src/components/Presupuesto';
-// import Error from '../src/components/Error'
-import Formulario from '../src/components/Formulario'
-import Listado from '../src/components/Listado'
+import Formulario from '../src/components/Formulario';
+import Listado from '../src/components/Listado';
+import ControlGastos from './components/ControlGastos';
 
 function App() {
 
-  const [presupuesto, mostrarPresupuesto] = useState(true);
+  const [mostrarPresupuesto, actualizarMostarPresupuesto] = useState(true);
   const [gastos, setGastos] = useState([]);
 
   const [gasto, setGasto] = useState({});
   const [crearGasto, guardarCrearGasto] = useState(false);
 
+  const [restante, setRestante] = useState(0);
+  const [presupuesto, asignarPresupuesto] = useState(0);
 
 
   useEffect(() => {
@@ -20,13 +22,16 @@ function App() {
         ...gastos,
         gasto
       ]);
+
+      let presupuestoRestante = restante - gasto.cantidad;
+      setRestante(presupuestoRestante);
     }
     guardarCrearGasto(false);
-  }, [crearGasto, gastos, gasto]);
+  }, [crearGasto, gastos, gasto, restante]);
 
   return (
     <Fragment>
-      {presupuesto
+      {mostrarPresupuesto
         ?
         (
           <Fragment>
@@ -34,7 +39,9 @@ function App() {
               <h1 className="titulo text-center d-flex align-items-center zoom py-5 justify-content-center">Control de presupuesto</h1>
             </div>
             <Presupuesto
-              mostrarPresupuesto={mostrarPresupuesto}
+              actualizarMostarPresupuesto={actualizarMostarPresupuesto}
+              setRestante={setRestante}
+              asignarPresupuesto={asignarPresupuesto}
             />
           </Fragment>
         )
@@ -45,8 +52,7 @@ function App() {
               <h1 className="titulo text-center d-flex align-items-center zoom py-5 justify-content-center">Control de gasto semanal</h1>
             </div>
 
-            <div className="row my-3 d-flex justify-content-center">
-
+            <div className="row mt-3 d-flex justify-content-center">
               <div className="col-5 contenedor py-3 mx-1">
                 <Formulario
                   setGasto={setGasto}
@@ -60,8 +66,12 @@ function App() {
                     gastos={gastos}
                   />
                 </div>
-                <div className="row">
-
+                <div className="row mx-2 my-1">
+                  <h5>Control de gastos</h5>
+                  <ControlGastos
+                    presupuesto={presupuesto}
+                    restante={restante}
+                  />
                 </div>
               </div>
             </div>
