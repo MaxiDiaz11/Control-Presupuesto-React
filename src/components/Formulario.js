@@ -47,7 +47,7 @@ const Formulario = ({ setGasto, guardarCrearGasto }) => {
                         onChange={e => setNombre(e.target.value)}
                     />
                     <div className="mb-3">
-                        <label className="lead mb-1">Monto del gasto</label>
+                        <label className="lead my-1">Monto del gasto</label>
                         <input
                             type="number"
                             className="form-control w-100"

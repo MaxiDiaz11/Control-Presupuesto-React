@@ -53,7 +53,7 @@ function App() {
             </div>
 
             <div className="row mt-3 d-flex justify-content-center">
-              <div className="col-5 contenedor py-3 mx-1">
+              <div className="col-5 contenedor py-3 mx-1 alturaMaxima mh-100">
                 <Formulario
                   setGasto={setGasto}
                   guardarCrearGasto={guardarCrearGasto}

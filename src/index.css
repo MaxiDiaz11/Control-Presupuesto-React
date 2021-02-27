@@ -17,6 +17,7 @@ body {
 
 p {
   margin: 0px;
+  
 }
 
 .mensajeError {
@@ -69,4 +70,8 @@ p {
 
 .contenedorPresupuesto {
   background: rgb(60, 60, 175);
+}
+
+.alturaMaxima{
+  height: 320px;
 }
